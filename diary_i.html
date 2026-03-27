@@ -22,14 +22,6 @@
  
     body {
       background-color: var(--bg);
-      background-image:
-        repeating-linear-gradient(
-          0deg,
-          transparent,
-          transparent 31px,
-          var(--rule) 31px,
-          var(--rule) 32px
-        );
       min-height: 100vh;
       padding: 60px 24px;
       display: flex;
@@ -62,16 +54,6 @@
       border-left: 1px solid var(--ink-faint);
     }
  
-    /* Faint left margin line (red margin look) */
-    .entry::before {
-      content: '';
-      position: absolute;
-      left: 38px;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: #3a1a1a;
-    }
  
     /* ── ENTRY TITLE ── */
     .entry-title {
