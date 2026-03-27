@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diary</title>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --ink: #e8e0d0;
+      --ink-dim: #9a9080;
+      --ink-faint: #3a3530;
+      --rule: #1e1a15;
+    }
+ 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    body {
+      background-color: var(--bg);
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 31px,
+          var(--rule) 31px,
+          var(--rule) 32px
+        );
+      min-height: 100vh;
+      padding: 60px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Special Elite', 'Courier New', monospace;
+      color: var(--ink);
+    }
+ 
+    /* ── PAGE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      mix-blend-mode: overlay;
+    }
+ 
+    /* ════════════════════════════
+       THE ENTRY DIV — copy this!
+    ════════════════════════════ */
+    .entry {
+      width: 100%;
+      max-width: 680px;
+      padding: 48px 56px 64px;
+      margin-bottom: 72px;
+      position: relative;
+      border-left: 1px solid var(--ink-faint);
+    }
+ 
+    /* Faint left margin line (red margin look) */
+    .entry::before {
+      content: '';
+      position: absolute;
+      left: 38px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #3a1a1a;
+    }
+ 
+    /* ── ENTRY TITLE ── */
+    .entry-title {
+      font-family: 'UnifrakturMaguntia', serif;
+      font-size: 2.6rem;
+      line-height: 1.2;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+      text-shadow: 0 0 30px rgba(232, 224, 208, 0.08);
+    }
+ 
+    /* ── DATE / SUBHEADER ── */
+    .entry-date {
+      font-family: 'Special Elite', monospace;
+      font-size: 0.72rem;
+      color: var(--ink-dim);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+ 
+    /* ── DIVIDER ── */
+    .entry-divider {
+      border: none;
+      border-top: 1px solid var(--ink-faint);
+      margin-bottom: 28px;
+    }
+ 
+    /* ── BODY PARAGRAPHS ── */
+    .entry p {
+      font-family: 'Special Elite', monospace;
+      font-size: 1rem;
+      line-height: 2rem; /* snaps to the ruled lines */
+      color: var(--ink);
+      margin-bottom: 2rem;
+      text-align: left;
+      /* Subtle ink irregularity */
+      text-shadow: 0.3px 0.3px 0 rgba(232,224,208,0.15);
+    }
+ 
+    .entry p:last-of-type {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+ 
+  <!--
+  ╔══════════════════════════════════╗
+  ║  COPY EVERYTHING BELOW FOR A    ║
+  ║  NEW ENTRY                      ║
+  ╚══════════════════════════════════╝
+  -->
+  <div class="entry">
+    <h1 class="entry-title">Hate my dad.</h1>
+    <p class="entry-date">March &mdash; 27 &mdash; 2026, 11:47 A.M.</p>
+    <hr class="entry-divider"/>
+ 
+    <p>
+      I hate you.
+    </p>
+  </div>
+  <!-- END ENTRY -->
+ 
+</body>
+</html>
